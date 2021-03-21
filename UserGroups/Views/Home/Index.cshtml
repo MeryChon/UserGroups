@@ -1,0 +1,22 @@
+﻿@model IndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    @foreach (var group in Model.Groups)
+    {
+        <div class="card" style="width: 15rem; margin: 5px 1rem;">
+            <img src="@group.CoverImageUrl" class="card-img-top" alt="Group Cover Image">
+            <div class="card-body">
+                <h5 class="card-title">@group.Name</h5>
+                <p class="card-text">@group.Description</p>
+                <small>@group.NumMembers members</small><br />
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+    }
+</div>
+
+
