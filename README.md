@@ -1,0 +1,1 @@
+Simple .NET MVC web application for university course
