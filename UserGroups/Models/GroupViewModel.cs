@@ -7,13 +7,21 @@ namespace UserGroups.Models
 {
     public class GroupViewModel
     {
-        public GroupViewModel(string name, string description, int numMembers, string coverImageUrl)
+        public GroupViewModel()
         {
+
+        }
+
+        public GroupViewModel(int id, string name, string description, int numMembers, string coverImageUrl)
+        {
+            Id = id;
             Name = name;
             Description = description;
             NumMembers = numMembers;
             CoverImageUrl = coverImageUrl;
         }
+
+        public int Id { get; set; }
 
         public string Name { get; set; }
         public string Description { get; set; }

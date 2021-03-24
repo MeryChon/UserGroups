@@ -1,0 +1,47 @@
+﻿@model UserGroups.Models.GroupViewModel
+
+@{
+    ViewData["Title"] = "AddGroup";
+}
+
+<h3>Create New Group</h3>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddGroup" asp-controller="Home" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumMembers" class="control-label"></label>
+                <input asp-for="NumMembers" class="form-control" />
+                <span asp-validation-for="NumMembers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoverImageUrl" class="control-label"></label>
+                <input asp-for="CoverImageUrl" class="form-control" />
+                <span asp-validation-for="CoverImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

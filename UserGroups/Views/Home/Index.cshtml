@@ -3,6 +3,8 @@
     ViewData["Title"] = "Home Page";
 }
 
+<a class="btn btn-secondary" asp-controller="Home" asp-action="AddGroup">Create New</a>
+
 <div class="row">
     @foreach (var group in Model.Groups)
     {
@@ -12,7 +14,7 @@
                 <h5 class="card-title">@group.Name</h5>
                 <p class="card-text">@group.Description</p>
                 <small>@group.NumMembers members</small><br />
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a asp-controller="Home" asp-action="GroupDetail" asp-route-id ="@group.Id"class ="btn btn-primary">View</a>
             </div>
         </div>
 
